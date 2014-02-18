@@ -54,6 +54,12 @@ void setup()
 
   Serial.begin(9600);
   
+  //wait for serial
+  while(!Serial)
+  {
+    ;
+  }
+  
   sensors.begin();
   if (!sensors.getAddress(tempSensor, 0)) 
   {
